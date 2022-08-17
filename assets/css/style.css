@@ -8133,6 +8133,9 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 .social--icons a.twitter:hover {
   color: #00ACEE;
 }
+.social--icons a.instagram:hover {
+  color: #fd5949;
+}
 .social--icons a.linkedin:hover {
   color: #0E76A8;
 }
