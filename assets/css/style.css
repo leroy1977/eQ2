@@ -5537,6 +5537,9 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 .single-product .product-share a.share-facebook:hover {
   background: #3B5998;
 }
+.single-product .product-share a.share-instagram:hover {
+  background: #fd5949;
+}
 .single-product .product-share a.share-twitter:hover {
   background: #00ACEE;
 }
