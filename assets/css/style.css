@@ -4881,8 +4881,8 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 /* Blog Grid */
 .blog-grid .entry--meta {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
 }
 
 /* Blog Standard */
