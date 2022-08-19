@@ -4791,7 +4791,7 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   transform: translateY(-10px);
 }
 .blog-entry .entry--content {
-  padding: 22px 25px 0 30px;
+  padding: 22px 25px 0 10px;
   position: relative;
 }
 .blog-entry .entry--meta {
