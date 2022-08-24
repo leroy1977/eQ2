@@ -271,6 +271,15 @@
 <!--	</div> --> <!-- .row end -->
 	</div> <!-- .container end -->
 
+<!-- Contact Form Here -->
+<script>
+var form = document.forms["contact"];
+form.addEventListener('submit',contact_submit,false);
+
+function contact_submit(e) {
+// Stop Form From Submitting
+e.preventDefault();				
+		
 <!-- // Set Initial Variables -->
 var target = e.target || e.srcElement;
 var to = 'info@equanta.com.br';
