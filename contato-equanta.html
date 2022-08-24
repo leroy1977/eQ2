@@ -221,9 +221,8 @@
 <!--	<div class="col-sm-12 col-md-12 col-lg-6 offset-lg-3"> -->
 <!--	<div class="heading heading-1 text--center mb-60"> -->		
 		
-<!--	<form accept-charset="UTF-8" action="https://wa.me/5511985380253" method="POST" enctype="multipart/form-data" target="_blank"> -->
-<!--	<form action=”mailto:info@equanta.com.br” method="post" enctype="text/plain"> -->
-	<form onsubmit="sendEmail(); reset(); return false;">
+	<form accept-charset="UTF-8" action="mailto:info@equanta.com.br" method="POST" enctype="multipart/form-data" target="_blank">
+<!--	<form action=”mailto:info@equanta.com.br” method="post" enctype="text/plain"> --->
 	<div class="form-group">
         <label for="exampleInputName">Nome</label>
         <input type="text" name="name" class="form-control" id="exampleInputName" placeholder="Insira seu nome" required="required">
@@ -262,7 +261,8 @@
 	<br>
         <hr>
         <br>
-	<button type="submit" value="Send" class="btn btn-primary">Enviar</button>
+<!--	<button type="submit" value="Send" class="btn btn-primary">Enviar</button> -->
+	<button type="submit" value="Send" class="btn btn-primary"><a href="mailto:info@equanta.com.br">Email para eQuanta</a></button>
         </form>
 	
 	
@@ -270,156 +270,8 @@
 <!--	</div> --> <!-- .col-lg-4 end -->
 <!--	</div> --> <!-- .row end -->
 	</div> <!-- .container end -->
-
-<!-- Contact Form Here -->
-<script>
-var form = document.forms["contact"];
-form.addEventListener('submit',contact_submit,false);
-
-function contact_submit(e) {
-// Stop Form From Submitting
-e.preventDefault();				
-		
-<!-- // Set Initial Variables -->
-var target = e.target || e.srcElement;
-var to = 'info@equanta.com.br';
-var uri = 'mailto:' + to;
-var body = '';
-
-<!-- // Set Form Values to Variables -->
-var name = target.elements['name'].value;
-var email = target.elements['email'].value;
-var platform = target.elements['platform'].value;
-var subject = target.elements['subject'].value;
-
-<!-- // Build Body / Message with all Input Fields -->
-body += subject + "\r\n\r\n";
-body += "Name: " + name + "\r\n";
-body += "Email: " + email + "\r\n";
-
-<!-- // Build final Mailto URI -->
-uri += '?subject=' + encodeURIComponent(subject);
-uri += '&body=' + encodeURIComponent(body);
-
-<!-- // Open Mailto in New Window / Tab -->
-window.open(uri,'_blank');
-	}
-</script>	
-	
-	<!--	
-	<script src="https://smtpjs.com/v3/smtp.js"></script>
-	<script>
-	function sendEmail() {
-	Email.send({
-    	Host : "smtp.gmail.com",
-    	Username : "info@equanta.com.br",
-    	Password : "password",
-    	To : 'them@website.com',
-    	From : document.getElementById("email").value,
-    	Subject : "New Contact Form Enquiry",
-    	Body : "Name: " + document.getElementById("name").value,
-	+ "<br> Email: " + document.getElementById("email").value
-	+ "<br> Message: " + document.getElementById("message").value
-	}).then(
-  	message => alert("Enviado!")
-	);		
-	}
-	</script> -->
-		
 	</section><!-- #features1 end -->
-			
-
-<!-- formulario contato / mensagem no whatsapp #1
-============================================= -->
-				
-<section id="features1" class="features features-1 pt-60 pb-60">
-<div class="container"> 					
-
-$(function() {
-  $('#send-message-whatsapp').on('click', 'button', function(e) {
-    e.preventDefault();
-
-    const $form = $("#send-message-whatsapp");
-
-    const phone = '5511985380253';
-
-    // get object i.e {key: 'value'} of form
-    let data = {}
-    $form.serializeArray().forEach(v => data[v.name] = v.value)
-
-    // make the ?text= payload, 
-    // - could use .filter() here too if you dont want empty values
-    const text = [
-      data.nome,
-      data.email,
-      data.wpp,
-      data.cep,
-      data.rua,
-      data.bairro,
-      data.complemento
-    ].join(' - ') // change to what you want sep to be
-
-    // make the url
-    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
-    console.log(action)
-
-    /*
-        $form.attr('action', action);
-        $form.attr('target', '_blank');
-        $form.submit();
-    */
-  });
-});				
-				
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
-<form id="send-message-whatsapp">
-
-  <div class="form-label-group">
-    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required="" autofocus="">
-    <label for="nome">Nome completo</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
-    <label for="inputEmail">Seu E-mail</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="text" name="wpp" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
-    <label for="wpp">Seu Número/WhatsApp</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="text" id="cep" name="cep" class="form-control" placeholder="Seu cep" required="" autofocus="">
-    <label for="cep">Seu CEP</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="text" id="rua" name="rua" class="form-control" placeholder="Sua Rua" required="" autofocus="">
-    <label for="rua">Nome da sua Rua</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Seu Bairro" required="" autofocus="">
-    <label for="rua">Bairro</label>
-  </div>
-
-  <div class="form-label-group">
-    <input type="text" name="complemento" class="form-control" placeholder="Complemento" required="" autofocus="">
-    <label for="rua">Complemento</label>
-  </div>
-
-  <div class="checkbox mb-3">
-    <label>
-      <input type="checkbox" value="remember-me"> Remember me
-    </label>
-  </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-</form>
-
-</div> <!-- .container end -->
-</section><!-- #features1 end -->				
+						
 				
 <!-- orgaos #1
 ============================================= -->
