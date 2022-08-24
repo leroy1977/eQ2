@@ -212,7 +212,7 @@
 </section>
 				
 				
-<!-- formulario contato #1
+<!-- formulario contato / mensagem no e-mail #1
 ============================================= -->
 
 	<section id="features1" class="features features-1 pt-60 pb-60">
@@ -328,7 +328,99 @@ window.open(uri,'_blank');
 		
 	</section><!-- #features1 end -->
 			
-		
+
+<!-- formulario contato / mensagem no whatsapp #1
+============================================= -->
+				
+<section id="features1" class="features features-1 pt-60 pb-60">
+<div class="container"> 					
+
+$(function() {
+  $('#send-message-whatsapp').on('click', 'button', function(e) {
+    e.preventDefault();
+
+    const $form = $("#send-message-whatsapp");
+
+    const phone = '5511985380253';
+
+    // get object i.e {key: 'value'} of form
+    let data = {}
+    $form.serializeArray().forEach(v => data[v.name] = v.value)
+
+    // make the ?text= payload, 
+    // - could use .filter() here too if you dont want empty values
+    const text = [
+      data.nome,
+      data.email,
+      data.wpp,
+      data.cep,
+      data.rua,
+      data.bairro,
+      data.complemento
+    ].join(' - ') // change to what you want sep to be
+
+    // make the url
+    const action = "https://wa.me/" + phone + "?text=" + encodeURIComponent(text);
+    console.log(action)
+
+    /*
+        $form.attr('action', action);
+        $form.attr('target', '_blank');
+        $form.submit();
+    */
+  });
+});				
+				
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+<form id="send-message-whatsapp">
+
+  <div class="form-label-group">
+    <input type="text" name="nome" class="form-control" placeholder="Seu nome" required="" autofocus="">
+    <label for="nome">Nome completo</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="email" name="email" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
+    <label for="inputEmail">Seu E-mail</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="wpp" class="form-control" placeholder="Seu e-mail" required="" autofocus="">
+    <label for="wpp">Seu Número/WhatsApp</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="cep" name="cep" class="form-control" placeholder="Seu cep" required="" autofocus="">
+    <label for="cep">Seu CEP</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="rua" name="rua" class="form-control" placeholder="Sua Rua" required="" autofocus="">
+    <label for="rua">Nome da sua Rua</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" id="bairro" name="bairro" class="form-control" placeholder="Seu Bairro" required="" autofocus="">
+    <label for="rua">Bairro</label>
+  </div>
+
+  <div class="form-label-group">
+    <input type="text" name="complemento" class="form-control" placeholder="Complemento" required="" autofocus="">
+    <label for="rua">Complemento</label>
+  </div>
+
+  <div class="checkbox mb-3">
+    <label>
+      <input type="checkbox" value="remember-me"> Remember me
+    </label>
+  </div>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+</form>
+
+</div> <!-- .container end -->
+</section><!-- #features1 end -->				
+				
 <!-- orgaos #1
 ============================================= -->
 <section id="clients1" class="clients clients-carousel clients-1">
