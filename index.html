@@ -775,8 +775,8 @@ Slider #1
 </a>		
 		
 <script>
-          var wa_btnSetting = {"class":"float-button"};
-          var wa_widgetSetting = {"title":"eQuanta","subTitle":"Normalmente respondemos em até 1 h.","headerBackgroundColor":"#9a9996","headerColorScheme":"dark","greetingText":"Olá! \nComo podemos ajudar no seu projeto?","ctaText":"Conversar","btnColor":"#26a269","cornerRadius":40,"welcomeMessage":"Olá","btnColorScheme":"light","brandImage":"assets/images/favicon/favicon.png","darkHeaderColorScheme":{"title":"#333333","subTitle":"#4F4F4F"}};  
+	var wa_btnSetting = document.getElementsByClassName("float-button");
+        var wa_widgetSetting = {"title":"eQuanta","subTitle":"Normalmente respondemos em até 1 h.","headerBackgroundColor":"#9a9996","headerColorScheme":"dark","greetingText":"Olá! \nComo podemos ajudar no seu projeto?","ctaText":"Conversar","btnColor":"#26a269","cornerRadius":40,"welcomeMessage":"Olá","btnColorScheme":"light","brandImage":"assets/images/favicon/favicon.png","darkHeaderColorScheme":{"title":"#333333","subTitle":"#4F4F4F"}};  
           window.onload = () => {
             _waEmbed(wa_btnSetting, wa_widgetSetting);
           };
