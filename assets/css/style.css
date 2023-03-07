@@ -4593,7 +4593,7 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   font-weight: 900;
   line-height: 65px;
   margin-bottom: 20px;
-  text-transform: capitalize;
+  text-transform: none;
 }
 .slider .slider--desc {
   color: #ffffff;
