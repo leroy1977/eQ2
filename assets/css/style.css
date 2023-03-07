@@ -4589,7 +4589,7 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 }
 .slider .slider--headline {
   color: #ffffff;
-  font-size: 40px;
+  font-size: 60px;
   font-weight: 900;
   line-height: 65px;
   margin-bottom: 20px;
@@ -4597,7 +4597,7 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 }
 .slider .slider--desc {
   color: #ffffff;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 600;
   line-height: 24px;
   padding: 0 90px;
