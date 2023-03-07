@@ -4589,15 +4589,15 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 }
 .slider .slider--headline {
   color: #ffffff;
-  font-size: 30px;
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: 900;
   line-height: 65px;
   margin-bottom: 20px;
   text-transform: none;
 }
 .slider .slider--desc {
   color: #ffffff;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 600;
   line-height: 24px;
   padding: 0 90px;
