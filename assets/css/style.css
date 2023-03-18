@@ -8187,6 +8187,11 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
 }
 
 
+  .float-button:hover {
+         background-color: #128C7E;
+          color: #fff;
+    } 
+
     .fa-whatsapp {
         font-size: 20px !important;
         padding-right: 5px;
