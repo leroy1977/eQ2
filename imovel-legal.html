@@ -159,78 +159,41 @@
     </div><!-- .container end -->
 </section><!-- #page-title end -->
 
-<!-- Slider Imoveis #1
-==================================-->
-<section id="slider1" class="slider slider-1 text-center">
-    <div class="container-fluid pr-0 pl-0">
-        <div class="carousel owl-carousel carousel-navs carousel-dots" data-slide="1" data-slide-rs="1" data-autoplay="false" data-nav="true" data-dots="true" data-space="0" data-loop="true" data-speed="900">
-		
-		
-	<!-- Slide #1-->
-   	    	<div class="slide bg-overlay bg-overlay-dark">
-   		<div class="bg-section">	
-                <img src="assets/images/sliders/publiweb_CS_1350px.svg" alt="eQuanta Consultoria Ambiental" />
-                </div>
-                <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 offset-lg-2 col-xl-8 offset-xl-2">
-                <div class="slider-content">
-                <h1 class="slider--headline"></h1>
-                <p class="slider--desc"></p>
-                <!--	<a class="btn btn--white" href="sobre-equanta.html">Saiba Mais</a> -->
-                </div>
-                <!-- .slider-content end -->
-                </div>
-                <!-- .col-xl-6 end -->
-                <!--	</div> -->
-                <!-- .row end -->
-            	<!--	</div>	-->
-            	<!-- .slide end -->
-				
-        <!-- Slide #2 -->
-            	<div class="slide bg-overlay bg-overlay-dark">
-                <div class="bg-section">
-                <img src="assets/images/sliders/publiweb_CS_1350px.svg" alt="eQuanta Consultoria Ambiental" />
-                </div>
-                <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 offset-lg-2 col-xl-8 offset-xl-2">
-                <div class="slider-content">
-                <h1 class="slider--headline"></h1>
-                <p class="slider--desc"></p>
-                <!--	<a class="btn btn--white" href="sobre-equanta.html">Saiba Mais</a> -->
-                </div>
-                <!-- .slider-content end -->
-                </div>
-                <!-- .col-xl-6 end -->
-                </div>
-                <!-- .row end -->
-            	</div>
-            	<!-- .slide end -->
-			
-			
-        <!-- Slide #3-->
-           	<div class="slide bg-overlay bg-overlay-dark">
-                <div class="bg-section">
-                <img src="assets/images/sliders/publiweb_CS_1350px.svg" alt="eQuanta Consultoria Ambiental" />
-                </div>
-                <div class="row">	
-                <div class="col-sm-12 col-md-12 col-lg-12 offset-lg-2">
-               	<div class="slider-content">
- 	       	<h1 class="slider--headline"></h1>
-                <p class="slider--desc"></p>
-                <!--	<a class="btn btn--white" href="licenca_ambiental_para_construir.html">Saiba Mais</a> -->
-                </div>
-                <!-- .slider-content end -->
-                </div>
-                <!-- .col-xl-6 end -->
-                </div>
-                <!-- .row end -->
-    	        </div>		
-			
-        </div>
-        <!-- .hero-slider end -->
-    	</div>
-    	<!-- .container end -->
-</section> <!-- #slider end -->	
+
+
+<!-- LEAFLETS -->
+
+  <div id="map"></div>
+
+<script>
+  // Create a new map object centered on your desired location
+  var map = L.map('map').setView([51.505, -0.09], 13);
+
+  // Add a tile layer to the map (you can choose a different one if desired)
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
+    maxZoom: 18,
+  }).addTo(map);
+
+  // Define your multilayered polygon (replace with your own data)
+  var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047],
+    [51.516, -0.064],
+    [51.51, -0.08]
+  ], {
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5
+  }).addTo(map);
+
+  // Center the map on your polygon
+  map.fitBounds(polygon.getBounds());
+</script>
+
+
+
 				
 <!-- features #1 ============================================= -->
 <section id="features1" class="features features-1 pt-130 pb-110">
@@ -368,34 +331,7 @@
 	</section><!-- #contact3 end -->	
 
 
-  <div id="map"></div>
 
-<script>
-  // Create a new map object centered on your desired location
-  var map = L.map('map').setView([51.505, -0.09], 13);
-
-  // Add a tile layer to the map (you can choose a different one if desired)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 18,
-  }).addTo(map);
-
-  // Define your multilayered polygon (replace with your own data)
-  var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047],
-    [51.516, -0.064],
-    [51.51, -0.08]
-  ], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5
-  }).addTo(map);
-
-  // Center the map on your polygon
-  map.fitBounds(polygon.getBounds());
-</script>
 
 						
 <!-- Footer #1
