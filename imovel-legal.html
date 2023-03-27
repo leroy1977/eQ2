@@ -227,11 +227,11 @@
 <br><br>
 
 <!-- LEAFLETS =============================================-->
- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
      crossorigin=""/>
- <!-- Make sure you put this AFTER Leaflet's CSS -->
- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
      crossorigin=""></script>
  
@@ -242,16 +242,17 @@
   </style>  
 
 <script>
-var map = L.map('map').setView([-23.658135, -46.170859], 13);  
+var map = L.map('map').setView([-23.658135, -46.170859], 9);  
   
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 25,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);  
   
-var marker = L.marker([-23.658135, -46.170859]).addTo(map);   
+var markerCS = L.marker([-23.658135, -46.170859]).addTo(map);   
+var markerAV = L.marker([-23.812196, -45.351689]).addTo(map);
   
-var polygon = L.polygon([
+var polygonCS = L.polygon([
 [-23.657336,-46.170283],
 [-23.657974,-46.170316],
 [-23.658435,-46.170305],
@@ -267,6 +268,44 @@ var polygon = L.polygon([
 [-23.657709,-46.171346],
 [-23.657404,-46.171345], 
 [-23.657336,-46.170283]
+]).addTo(map);
+
+
+var polygonAV = L.polygon([
+[-23.812167,-45.351825], 
+[-23.812162,-45.351808], 
+[-23.812155,-45.351792], 
+[-23.812148,-45.351776], 
+[-23.81214,-45.351761], 
+[-23.812131,-45.351746], 
+[-23.812121,-45.351732], 
+[-23.812111,-45.351719], 
+[-23.812099,-45.351706], 
+[-23.812087,-45.351694], 
+[-23.812075,-45.351684], 
+[-23.812061,-45.351673], 
+[-23.812048,-45.351664], 
+[-23.812033,-45.351656], 
+[-23.812275,-45.351471], 
+[-23.812386,-45.351382], 
+[-23.812463,-45.351442], 
+[-23.812479,-45.351455], 
+[-23.812498,-45.351474], 
+[-23.812535,-45.351514], 
+[-23.812552,-45.351525], 
+[-23.812577,-45.351535], 
+[-23.812577,-45.351535], 
+[-23.812605,-45.351538], 
+[-23.812633,-45.351532], 
+[-23.812703,-45.351488], 
+[-23.812703,-45.351488], 
+[-23.812703,-45.351488], 
+[-23.812721,-45.351483], 
+[-23.81274,-45.351485], 
+[-23.812813,-45.351504], 
+[-23.812751,-45.351649],
+[-23.812376,-45.351765], 
+[-23.812167, -45.351825]
 ]).addTo(map);
    
 function onMapClick(e) {
