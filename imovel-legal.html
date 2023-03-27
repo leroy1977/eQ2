@@ -68,20 +68,71 @@
       <script src="assets/js/respond.min.js"></script>
     <![endif]-->
 
-    <!-- Document Title
-    ============================================= -->
+    <!-- Document Title ============================================= -->
     <title>eQuanta - Contato - Consultoria Ambiental</title>
 
 
+<!-- LEAFLETS =============================================-->
  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
      integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
-     crossorigin=""/>	
-     
+     crossorigin=""/>
  <!-- Make sure you put this AFTER Leaflet's CSS -->
  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
      integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
-     crossorigin=""></script>     
-     
+     crossorigin=""></script>
+ 
+<div id="map"></div>
+
+<style>
+#map { height: 360px; }
+  </style>  
+
+<script>
+var map = L.map('map').setView([-23.658135, -46.170859], 13);  
+  
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 25,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);  
+  
+var marker = L.marker([-23.658135, -46.170859]).addTo(map);   
+  
+var polygon = L.polygon([
+[-23.657336,-46.170283],
+[-23.657974,-46.170316],
+[-23.658435,-46.170305],
+[-23.658743,-46.170301], 
+[-23.659384,-46.170305],
+[-23.659844,-46.170323],
+[-23.659785,-46.170367],
+[-23.659742,-46.170365], 
+[-23.659324,-46.170652],
+[-23.659058,-46.170996],
+[-23.658993,-46.171041],
+[-23.658409,-46.171208],
+[-23.657709,-46.171346],
+[-23.657404,-46.171345], 
+[-23.657336,-46.170283]
+]).addTo(map);
+   
+function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);  
+
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+
+map.on('click', onMapClick);    
+  
+</script> 
      
 
 </head>
@@ -125,12 +176,6 @@
 	</li>
 <!-- li end -->
 
-<!-- Ajuda -->
-<!--	<li> 	-->
-<!--		<a href="ajuda-faq-duvidas-licenciamento-ambiental.html" class="dropdown-toggle menu-item">Ajuda</a>	-->
-<!--	</li> -->
-<!-- li end -->
-
 <!-- contato -->
 	<li> 
 		<a href="contato-equanta.html" class="dropdown-toggle menu-item">Contato</a>
@@ -145,7 +190,7 @@
 ============================================= -->
 <section id="page-title" class="page-title bg-overlay bg-overlay-dark bg-parallax">
     <div class="bg-section">
-        <img src="assets/images/page-titles/psa1.jpg" alt="Background" />
+        <img src="assets/images/page-titles/rural-legal.png" alt="Background" />
     </div>
     <div class="container">
         <div class="row">
@@ -164,39 +209,6 @@
         </div><!-- .row end -->
     </div><!-- .container end -->
 </section><!-- #page-title end -->
-
-
-
-<!-- LEAFLETS -->
-
-  <div id="map"></div>
-
-<script>
-  // Create a new map object centered on your desired location
-  var map = L.map('map').setView([51.505, -0.09], 13);
-
-  // Add a tile layer to the map (you can choose a different one if desired)
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors',
-    maxZoom: 18,
-  }).addTo(map);
-
-  // Define your multilayered polygon (replace with your own data)
-  var polygon = L.polygon([
-    [51.509, -0.08],
-    [51.503, -0.06],
-    [51.51, -0.047],
-    [51.516, -0.064],
-    [51.51, -0.08]
-  ], {
-    color: 'red',
-    fillColor: '#f03',
-    fillOpacity: 0.5
-  }).addTo(map);
-
-  // Center the map on your polygon
-  map.fitBounds(polygon.getBounds());
-</script>
 
 
 <!-- features #1
@@ -318,9 +330,6 @@
         </div><!-- .row end -->
     </div><!-- .container end -->				
 
-
-
-
 	<br>
 	<div class="container">
 	<div class="heading heading-1 text--center mb-60">
@@ -339,14 +348,6 @@
 
 
 
-
-	
-
-
-
-
-
-						
 <!-- Footer #1
 ============================================= -->
 <footer id="footerParallax" class="footer footer-1">
@@ -419,14 +420,6 @@
         <!-- .row end -->
     </div><!-- .footer-bar end -->
 </footer>
- 
-<!--	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> <a href="https://wa.me/5511985380253" style="position:fixed;width:60px;height:60px;bottom:40px;right:60px;background-color:#25d366;color:#FFF;border-radius:50px;text-align:center;font-size:30px;box-shadow: 1px 1px 2px #888; z-index:1000;" target="_blank"> <i style="margin-top:16px" class="fa fa-whatsapp"></i></a>	-->
-		
-<!--	<title>WhatsApp Responsive Button</title> -->
-<!--	<a class="float-button" target="_blank" href="https://api.whatsapp.com/send?1=pt_BR&phone=5511985380253">
-  <i class="fa fa-whatsapp" aria-hidden="true"></i>
-  <span>Whatsapp!<span>
-</a> -->
 		
 <script src="https://kit.fontawesome.com/a7a0d0c36c.js" crossorigin="anonymous"></script>
 
