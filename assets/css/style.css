@@ -5698,6 +5698,20 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
     margin: 0 10px 10px 0;
   }
 }
+
+/*------------------------------------*\
+    #Stylish Lists
+\*------------------------------------*/
+
+.fusion-checklist .circle-yes, ul.fusion-checklist .circle-yes {
+  border-radius: 50%;
+  background-clip: padding-box;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+}
+
+
 /*------------------------------------*\
     #work
 \*------------------------------------*/
