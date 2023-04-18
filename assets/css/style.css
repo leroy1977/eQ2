@@ -5722,12 +5722,12 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   display: inline-block;
 }
 
-.fa, .fas {
+.fa, .fas, .fad {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
-.fa, .fab, .fal, .far, .fas {
+.fa, .fab, .fad, .fal, .far, .fas {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   display: inline-block;
