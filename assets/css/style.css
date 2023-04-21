@@ -4263,6 +4263,10 @@ li.has-dropdown > ul.dropdown-menu > li.dropdown-submenu > ul.dropdown-menu {
   cursor: pointer;
 }
 
+.animated {
+animateOut: fadeOut;	
+}
+
 .carousel-navs .owl-nav [class*=owl-]:hover {
   color: #6D8B8B;
 }
